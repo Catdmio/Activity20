@@ -1,10 +1,24 @@
+# Ejercicio 2
+
+# Formula que calcula perimetro y area,
+# haciendo distincion entre cuadrado y rectangulo
+
 module Formula
-  def Area(l1, l2)
-    l1 * l2
+
+  def perimetro
+    if self.class.is_a? Cuadrado
+      @lado * 4
+    elsif self.class.is_a? Rectangulo
+      2 * (@largo + @ancho)
+    end
   end
 
-  def perimetro(l1, l2)
-    2 * (l1 + l2)
+  def area
+    if self.is_a? Cuadrado
+      @lado * @lado
+    elsif self.is_a? Rectangulo
+      @largo * @ancho
+    end
   end
 end
 
@@ -33,3 +47,5 @@ class Cuadrado
     "Los lados son #{@lado}"
   end
 end
+
+# vars.each do |v| puts c2.instance_variable_get v end
